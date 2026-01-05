@@ -1,0 +1,37 @@
+# Vendor dependencies
+/vendor/
+
+# Uploads (sensitive data)
+/uploads/documents/*
+/uploads/photos/*
+!uploads/documents/.htaccess
+!uploads/photos/.htaccess
+
+# Configuration with credentials
+/config/database.php
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+/tmp/*
+!tmp/.htaccess
+
+# Cache
+/cache/*
+!cache/.htaccess
+
+# Session files
+/sessions/*
+!sessions/.htaccess

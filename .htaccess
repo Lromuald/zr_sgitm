@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Rediriger toutes les requêtes vers public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Désactiver l'affichage des erreurs en production
+php_flag display_errors off
+php_flag display_startup_errors off
+
+# Sécurité
+<FilesMatch "\.(env|ini|log|sh|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protection des fichiers sensibles
+<Files "composer.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "composer.lock">
+    Order allow,deny
+    Deny from all
+</Files>
