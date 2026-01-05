@@ -1,0 +1,325 @@
+/* Palette de couleurs */
+:root {
+    --primary: #240046;
+    --secondary: #ff5400;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+    --neutral: #6c757d;
+}
+
+/* Body et layout général */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Badges statuts engins */
+.badge-disponible {
+    background-color: var(--success);
+    color: white;
+}
+
+.badge-en-mission {
+    background-color: var(--warning);
+    color: #000;
+}
+
+.badge-en-maintenance {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.badge-hors-service {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* Badges statuts livraisons */
+.badge-planifiee {
+    background-color: var(--info);
+    color: white;
+}
+
+.badge-en-cours {
+    background-color: var(--warning);
+    color: #000;
+}
+
+.badge-livree {
+    background-color: var(--success);
+    color: white;
+}
+
+.badge-annulee {
+    background-color: var(--neutral);
+    color: white;
+}
+
+/* Badges statuts maintenances */
+.badge-preventive {
+    background-color: var(--info);
+    color: white;
+}
+
+.badge-corrective {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* Badges statuts paiements */
+.badge-payee {
+    background-color: var(--success);
+    color: white;
+}
+
+.badge-impayee {
+    background-color: var(--danger);
+    color: white;
+}
+
+.badge-partiellement-payee {
+    background-color: var(--warning);
+    color: #000;
+}
+
+/* Alertes documents */
+.alerte-j30 {
+    border-left: 4px solid var(--success);
+    background-color: #d4edda;
+}
+
+.alerte-j15 {
+    border-left: 4px solid var(--warning);
+    background-color: #fff3cd;
+}
+
+.alerte-j3 {
+    border-left: 4px solid var(--danger);
+    background-color: #f8d7da;
+}
+
+.alerte-expire {
+    border-left: 4px solid #000;
+    background-color: #f8d7da;
+    font-weight: bold;
+}
+
+/* Boutons personnalisés */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #3a015c;
+    border-color: #3a015c;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #cc4400;
+    border-color: #cc4400;
+}
+
+/* Cards */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+/* DataTables customization */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    color: white !important;
+}
+
+/* Tooltips */
+.tooltip-inner {
+    background-color: var(--primary);
+}
+
+/* Stock critique highlight */
+.stock-critique {
+    background-color: #fff3cd;
+    font-weight: bold;
+}
+
+.stock-ok {
+    background-color: #d4edda;
+}
+
+/* Surconsommation alert */
+.surconsommation-alert {
+    background-color: #f8d7da;
+    border-left: 4px solid var(--danger);
+}
+
+/* Conformité documentaire colors */
+.doc-valide {
+    background-color: var(--success);
+    color: white;
+}
+
+.doc-expire-bientot {
+    background-color: var(--warning);
+    color: #000;
+}
+
+.doc-expire {
+    background-color: var(--danger);
+    color: white;
+}
+
+.doc-manquant {
+    background-color: var(--neutral);
+    color: white;
+}
+
+/* Print styles pour factures */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .card {
+        border: none;
+        box-shadow: none;
+    }
+    
+    @page {
+        margin: 2cm;
+    }
+}
+
+/* Loading spinner */
+.spinner-border-custom {
+    border-color: var(--primary);
+    border-right-color: transparent;
+}
+
+/* Form validation */
+.was-validated .form-control:valid {
+    border-color: var(--success);
+}
+
+.was-validated .form-control:invalid {
+    border-color: var(--danger);
+}
+
+/* Timeline pour historique */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+/* Stats cards */
+.stat-card {
+    border-left: 4px solid var(--primary);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Modal customization */
+.modal-header {
+    background-color: var(--primary);
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Drag and drop zone */
+.dropzone {
+    border: 2px dashed var(--primary);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dropzone:hover {
+    background-color: #f8f9fa;
+    border-color: var(--secondary);
+}
+
+.dropzone.dragover {
+    background-color: #e7f3ff;
+    border-color: var(--secondary);
+}
+
+/* Retard facture */
+.facture-retard {
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0%, 100% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #ffe6e6;
+    }
+}
