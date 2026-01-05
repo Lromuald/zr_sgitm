@@ -128,7 +128,7 @@ class PieceController extends Controller
         
         // Créer la pièce
         try {
-            $pieceId = $this->pieceModel->create($data);
+            $pieceId = $this->pieceModel->insert($data);
             
             if ($pieceId) {
                 $_SESSION['success'] = 'Pièce créée avec succès';

@@ -189,7 +189,7 @@ class MouvementStockController extends Controller
         
         // Enregistrer le mouvement
         try {
-            $mouvementId = $this->mouvementModel->create($data);
+            $mouvementId = $this->mouvementModel->insert($data);
             
             if ($mouvementId) {
                 $_SESSION['success'] = 'Mouvement enregistré avec succès';

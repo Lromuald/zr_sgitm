@@ -16,8 +16,11 @@ define('PUBLIC_PATH', BASE_PATH . '/public');
 define('UPLOAD_PATH', BASE_PATH . '/uploads');
 define('CONFIG_PATH', BASE_PATH . '/config');
 
-// URL de base (à ajuster selon l'environnement)
-define('BASE_URL', 'http://localhost/zr_sgitm');
+// URL de base (détection automatique)
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$scriptName = str_replace('/public/index.php', '', $_SERVER['SCRIPT_NAME'] ?? '');
+define('BASE_URL', $protocol . '://' . $host . $scriptName);
 
 // Sécurité
 define('SESSION_LIFETIME', 1800); // 30 minutes en secondes

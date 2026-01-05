@@ -121,7 +121,7 @@ class ChauffeurController extends Controller
         }
         
         try {
-            $chauffeurId = $this->chauffeurModel->create($data);
+            $chauffeurId = $this->chauffeurModel->insert($data);
             
             if ($chauffeurId) {
                 $_SESSION['success'] = 'Chauffeur créé avec succès';

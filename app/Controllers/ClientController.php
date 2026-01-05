@@ -91,7 +91,7 @@ class ClientController extends Controller
         ];
         
         try {
-            $clientId = $this->clientModel->create($data);
+            $clientId = $this->clientModel->insert($data);
             
             if ($clientId) {
                 $_SESSION['success'] = 'Client créé avec succès';

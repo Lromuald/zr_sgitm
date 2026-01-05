@@ -139,7 +139,7 @@ class EnginController extends Controller
         
         // Créer l'engin
         try {
-            $enginId = $this->enginModel->create($data);
+            $enginId = $this->enginModel->insert($data);
             
             if ($enginId) {
                 $_SESSION['success'] = 'Engin créé avec succès';
